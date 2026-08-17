@@ -13,6 +13,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import Auth from "../pages/Auth";
 import Favorites from "../pages/Favorites";
 import NotFound from "../pages/NotFound";
 
@@ -41,6 +42,8 @@ export default function AppRoutes() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/auth/:mode" element={<Auth />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<NotFound />} />
           </Route>
