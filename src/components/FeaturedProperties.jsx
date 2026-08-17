@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Reusable FeaturedProperties: section heading + grid of PropertyCard.
  */
 import { Link } from "react-router-dom";

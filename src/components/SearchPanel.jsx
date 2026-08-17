@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * SearchPanel: reusable hero search UI (location + property type + search button).
  */
 import { useState } from "react";

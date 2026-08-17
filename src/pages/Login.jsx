@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Login page: email/password form with validation and demo navigation.
  */
 import { useState } from "react";
@@ -66,7 +66,7 @@ export default function Login() {
         </form>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          New to Flex Living?{" "}
+          New to Dina Living?{" "}
           <Link to="/signup" className="font-semibold text-primary hover:underline">
             Create an account
           </Link>

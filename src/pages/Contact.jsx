@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Contact page: form (name, email, subject, message) + office info.
  */
 import { useState } from "react";
@@ -32,7 +32,7 @@ export default function Contact() {
           We'd love to <em className="text-primary">hear from you.</em>
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-          Questions about a listing, a viewing, or how Flex Living works? Send us a note and a human will answer.
+          Questions about a listing, a viewing, or how Dina Living works? Send us a note and a human will answer.
         </p>
       </section>
 

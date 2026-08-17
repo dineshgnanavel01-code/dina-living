@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * SectionHeading: editorial eyebrow + serif display title + quiet description.
  */
 import PropTypes from "prop-types";

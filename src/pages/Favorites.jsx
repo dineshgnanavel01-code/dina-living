@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Favorites page: saved homes from PropertyCard hearts.
  */
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Button: reusable variants (primary, outline, ghost) with press scale feedback.
  */
 import PropTypes from "prop-types";

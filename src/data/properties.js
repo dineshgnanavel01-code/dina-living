@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Mock JSON-style property data used across Home, Properties and PropertyDetails.
  * All images live in public/assets and are referenced with absolute paths.
  */
@@ -18,17 +18,17 @@ export const properties = [
     area: 1650,
     rating: 4.9,
     reviews: 48,
-    image: "/assets/hero-home.png",
+    image: "/assets/hero-home.jpg",
     featured: true,
     availability: "Available Now",
     description:
       "A bright craftsman home wrapped in morning light, with warm oak floors, a moss-green front door, and a garden that stays green all year. Built for slow weekends and long dinners.",
     amenities: ["Garden", "Fireplace", "Dishwasher", "Washer & Dryer", "Parking", "Pet Friendly", "Central Heating", "Storage"],
     gallery: [
-      "/assets/hero-home.png",
-      "/assets/property-1.png",
-      "/assets/property-4.png",
-      "/assets/property-8.png",
+      "/assets/hero-home.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-4.jpg",
+      "/assets/property-8.jpg",
     ],
   },
   {
@@ -44,17 +44,17 @@ export const properties = [
     area: 1120,
     rating: 4.8,
     reviews: 76,
-    image: "/assets/property-5.png",
+    image: "/assets/property-5.jpg",
     featured: true,
     availability: "Available from Sep 1",
     description:
       "High ceilings, industrial windows, and golden hour that lasts all afternoon. This loft in the Mill District was made for creatives who want to live above the city's hum.",
     amenities: ["Gym", "Rooftop", "Concierge", "Bike Storage", "In-Unit Laundry", "Hardwood Floors", "High Ceilings", "Doorman"],
     gallery: [
-      "/assets/property-5.png",
-      "/assets/property-1.png",
-      "/assets/property-6.png",
-      "/assets/property-4.png",
+      "/assets/property-5.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-6.jpg",
+      "/assets/property-4.jpg",
     ],
   },
   {
@@ -70,16 +70,16 @@ export const properties = [
     area: 740,
     rating: 4.7,
     reviews: 34,
-    image: "/assets/property-3.png",
+    image: "/assets/property-3.jpg",
     featured: false,
     availability: "Available Now",
     description:
       "A calm one-bedroom a few steps from Greenlake. Linen, sage, and wood define every corner — a quiet place to read, rest, and watch the seasons change.",
     amenities: ["Balcony", "In-Unit Laundry", "Dishwasher", "Bike Storage", "Hardwood Floors", "Pet Friendly"],
     gallery: [
-      "/assets/property-3.png",
-      "/assets/property-1.png",
-      "/assets/property-6.png",
+      "/assets/property-3.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-6.jpg",
     ],
   },
   {
@@ -95,17 +95,17 @@ export const properties = [
     area: 1480,
     rating: 4.8,
     reviews: 55,
-    image: "/assets/property-2.png",
+    image: "/assets/property-2.jpg",
     featured: true,
     availability: "Available from Oct 15",
     description:
       "White siding, green trim, and a boxwood-lined path to your door. This townhouse feels like the cover of a storybook — with the kitchen to match.",
     amenities: ["Backyard", "Garage", "Fireplace", "Washer & Dryer", "Dishwasher", "Central Heating", "Storage", "Pet Friendly"],
     gallery: [
-      "/assets/property-2.png",
-      "/assets/property-4.png",
-      "/assets/property-3.png",
-      "/assets/property-8.png",
+      "/assets/property-2.jpg",
+      "/assets/property-4.jpg",
+      "/assets/property-3.jpg",
+      "/assets/property-8.jpg",
     ],
   },
   {
@@ -121,17 +121,17 @@ export const properties = [
     area: 1050,
     rating: 4.9,
     reviews: 62,
-    image: "/assets/property-4.png",
+    image: "/assets/property-4.jpg",
     featured: true,
     availability: "Available Now",
     description:
       "Matte moss cabinetry, brass pendants, and a marble splash of light. The kitchen is the heart of this flat — and the heart is big.",
     amenities: ["In-Unit Laundry", "Balcony", "Gym", "Dishwasher", "Central AC", "Hardwood Floors", "Parking"],
     gallery: [
-      "/assets/property-4.png",
-      "/assets/property-1.png",
-      "/assets/property-8.png",
-      "/assets/property-5.png",
+      "/assets/property-4.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-8.jpg",
+      "/assets/property-5.jpg",
     ],
   },
   {
@@ -147,17 +147,17 @@ export const properties = [
     area: 2100,
     rating: 4.9,
     reviews: 41,
-    image: "/assets/property-6.png",
+    image: "/assets/property-6.jpg",
     featured: false,
     availability: "Available from Nov 1",
     description:
       "Travertine, brass, and morning light make every bathroom feel like a retreat. A four-bedroom family home designed around stillness.",
     amenities: ["Garden", "Garage", "Fireplace", "Washer & Dryer", "Central Heating", "Storage", "Balcony", "Pet Friendly"],
     gallery: [
-      "/assets/property-6.png",
-      "/assets/property-3.png",
-      "/assets/property-1.png",
-      "/assets/property-8.png",
+      "/assets/property-6.jpg",
+      "/assets/property-3.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-8.jpg",
     ],
   },
   {
@@ -173,17 +173,17 @@ export const properties = [
     area: 1230,
     rating: 4.8,
     reviews: 29,
-    image: "/assets/property-7.png",
+    image: "/assets/property-7.jpg",
     featured: true,
     availability: "Available Now",
     description:
       "Shiplap walls, a wildflower front yard, and a pergola strung with green. This cottage feels like it has been waiting for someone to love it.",
     amenities: ["Garden", "Fireplace", "Washer & Dryer", "Storage", "Pet Friendly", "Parking", "Pergola"],
     gallery: [
-      "/assets/property-7.png",
-      "/assets/property-3.png",
-      "/assets/property-1.png",
-      "/assets/property-4.png",
+      "/assets/property-7.jpg",
+      "/assets/property-3.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-4.jpg",
     ],
   },
   {
@@ -199,17 +199,17 @@ export const properties = [
     area: 2450,
     rating: 4.9,
     reviews: 38,
-    image: "/assets/property-8.png",
+    image: "/assets/property-8.jpg",
     featured: false,
     availability: "Available from Dec 1",
     description:
       "A long oak table beneath modern pendants, built-in cabinetry, and garden views at every window. A home made for people who gather.",
     amenities: ["Backyard", "Garage", "Fireplace", "Washer & Dryer", "Dishwasher", "Central Heating", "Storage", "Balcony"],
     gallery: [
-      "/assets/property-8.png",
-      "/assets/property-4.png",
-      "/assets/property-1.png",
-      "/assets/property-2.png",
+      "/assets/property-8.jpg",
+      "/assets/property-4.jpg",
+      "/assets/property-1.jpg",
+      "/assets/property-2.jpg",
     ],
   },
 ];

@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Properties page: filter panel (location, type, price, bedrooms, amenities)
  * + responsive grid of PropertyCards. Supports URL query params.
  */

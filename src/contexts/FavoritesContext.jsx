@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Favorites context: persists favorited property ids in localStorage.
  */
 import { createContext, useCallback, useContext, useMemo, useState } from "react";

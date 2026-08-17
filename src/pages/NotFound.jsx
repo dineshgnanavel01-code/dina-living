@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * 404 page: not found with link back to home.
  */
 import { useNavigate } from "react-router-dom";

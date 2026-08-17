@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Central React Router setup with a shared layout (Navbar + Footer).
  */
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";

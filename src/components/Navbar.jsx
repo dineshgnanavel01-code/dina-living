@@ -1,12 +1,12 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Sticky navbar: logo, nav links, search field, auth buttons, mobile hamburger.
  */
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Search, Heart } from "lucide-react";
 
-const LOGO = "/assets/flexliving-logo.png";
+const LOGO = "/assets/dinabrand-logo.png";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -35,9 +35,9 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-16 md:h-20 gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
-          <img src={LOGO} alt="Flex Living logo" className="h-9 w-9 md:h-11 md:w-11" />
+          <img src={LOGO} alt="Dina Living logo" className="h-9 w-9 md:h-11 md:w-11" />
           <span className="font-display text-xl md:text-2xl font-semibold tracking-tight text-foreground">
-            Flex <span className="italic text-primary">Living</span>
+            Dina <span className="italic text-primary">Living</span>
           </span>
         </Link>
 

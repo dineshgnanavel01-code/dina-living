@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Reusable Hero: asymmetric editorial hero with location search, category
  * strip, and overlapping framed photography.
  */
@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, MapPin, Search, Home as HomeIcon, Building2, Hotel, Leaf } from "lucide-react";
 import { properties, cities, types } from "../data/properties";
 
-const HERO_IMAGE = "/assets/hero-home.png";
+const HERO_IMAGE = "/assets/hero-home.jpg";
 
 const categories = [
   { label: "Houses", icon: HomeIcon, type: "House" },
@@ -43,7 +43,7 @@ export default function Hero() {
             Homes that feel like they were <em className="text-primary not-italic font-normal">made for you.</em>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-md leading-relaxed">
-            Flex Living pairs thoughtful design with honest listings — find your next chapter, not just an address.
+            Dina Living pairs thoughtful design with honest listings — find your next chapter, not just an address.
           </p>
 
           {/* Search bar */}

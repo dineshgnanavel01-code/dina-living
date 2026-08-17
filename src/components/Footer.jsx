@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Footer: hairline-divider editorial footer with brand, links, contact.
  */
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 // versions removed them and cause "does not provide an export named 'Facebook'" errors.
 import { Mail, Phone, MapPin } from "lucide-react";
 
-const LOGO = "/assets/flexliving-logo.png";
+const LOGO = "/assets/dinabrand-logo.png";
 
 export default function Footer() {
   return (
@@ -17,9 +17,9 @@ export default function Footer() {
         {/* Brand */}
         <div className="md:col-span-5">
           <Link to="/" className="flex items-center gap-2 mb-4">
-            <img src={LOGO} alt="Flex Living logo" className="h-10 w-10" />
+            <img src={LOGO} alt="Dina Living logo" className="h-10 w-10" />
             <span className="font-display text-2xl font-semibold tracking-tight">
-              Flex <span className="italic text-primary">Living</span>
+              Dina <span className="italic text-primary">Living</span>
             </span>
           </Link>
           <p className="text-muted-foreground max-w-sm leading-relaxed">
@@ -70,7 +70,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Flex Living. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dina Living. All rights reserved.</p>
           <p className="italic font-display">Homes that feel like they were made for you.</p>
         </div>
       </div>

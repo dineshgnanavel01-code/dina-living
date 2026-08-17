@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Property details page: image gallery, info, price, amenities,
  * description, availability, contact/book now.
  */

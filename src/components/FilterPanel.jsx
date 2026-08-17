@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Filter panel: location, property type, price range, bedrooms, amenities,
  * with Apply and Reset controls.
  */

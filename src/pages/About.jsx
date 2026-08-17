@@ -1,11 +1,11 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * About page: brand story, values, stats, team ethos.
  */
 import { Link } from "react-router-dom";
 import { ArrowRight, Camera, HeartHandshake, FileCheck, Sprout } from "lucide-react";
 
-const ABOUT_US = "/assets/about-us.png";
+const ABOUT_US = "/assets/about-us.jpg";
 
 const values = [
   {
@@ -41,7 +41,7 @@ export default function About() {
               We believe renting should feel like <em className="text-primary">home.</em>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Flex Living began with a simple frustration: too many listings looked nothing like their photos.
+              Dina Living began with a simple frustration: too many listings looked nothing like their photos.
               So we built a marketplace where every home is verified, photographed in person, and matched to the way you actually live.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -77,7 +77,7 @@ export default function About() {
         <div className="relative rounded-xl overflow-hidden bg-primary text-primary-foreground">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(70,145,100,0.45),transparent_55%),radial-gradient(circle_at_85%_70%,rgba(30,70,50,0.55),transparent_55%)]" aria-hidden />
           <div className="relative grid grid-cols-2 md:grid-cols-4 place-items-center py-14 px-6">
-            <div className="absolute top-5 left-8 text-primary-foreground/30 font-display italic text-lg hidden md:block" aria-hidden>Flex Living</div>
+            <div className="absolute top-5 left-8 text-primary-foreground/30 font-display italic text-lg hidden md:block" aria-hidden>Dina Living</div>
             {[
               ["7", "cities"],
               ["1,200+", "verified homes"],

@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Sign up page: name/email/password form with validation.
  */
 import { useState } from "react";
@@ -32,7 +32,7 @@ export default function Signup() {
     <main className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 py-14">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="font-display text-4xl font-semibold tracking-tight">Join Flex Living</h1>
+          <h1 className="font-display text-4xl font-semibold tracking-tight">Join Dina Living</h1>
           <p className="mt-2 text-muted-foreground">Save favorites, get alerts, and book viewings in one place.</p>
         </div>
 

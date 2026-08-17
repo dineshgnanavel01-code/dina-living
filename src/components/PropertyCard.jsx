@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Reusable property card: image, title, location, type, price, rating,
  * favorite heart, view details button, hover lift + image zoom.
  */

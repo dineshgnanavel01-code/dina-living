@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Auth page: combined login / sign-up with tab toggle (Login & Signup redirect here).
  */
 import { useState } from "react";
@@ -42,7 +42,7 @@ export default function Auth({ defaultMode = "login" }) {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="font-display text-4xl font-semibold tracking-tight">
-            {mode === "login" ? "Welcome back" : "Join Flex Living"}
+            {mode === "login" ? "Welcome back" : "Join Dina Living"}
           </h1>
           <p className="mt-2 text-muted-foreground">
             {mode === "login"
@@ -121,7 +121,7 @@ export default function Auth({ defaultMode = "login" }) {
         </form>
 
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          {mode === "login" ? "New to Flex Living? " : "Already have an account? "}
+          {mode === "login" ? "New to Dina Living? " : "Already have an account? "}
           <Link
             to={mode === "login" ? "/signup" : "/login"}
             onClick={(e) => {

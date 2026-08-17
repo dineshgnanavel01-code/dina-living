@@ -1,5 +1,5 @@
 /*
- * Flex Living — Sunlit Editorial
+ * Dina Living — Sunlit Editorial
  * Home page: hero (via Hero component), featured listings, about teaser,
  * neighborhood banner, CTA.
  */
@@ -8,7 +8,7 @@ import { ArrowRight, Quote } from "lucide-react";
 import Hero from "../components/Hero";
 import FeaturedProperties from "../components/FeaturedProperties";
 
-const ABOUT_US = "/assets/about-us.png";
+const ABOUT_US = "/assets/about-us.jpg";
 
 export default function Home() {
   return (
@@ -32,12 +32,12 @@ export default function Home() {
             />
           </div>
           <div className="lg:col-span-7 order-1 lg:order-2">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-primary mb-3">Why Flex Living</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-primary mb-3">Why Dina Living</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-snug">
               Renting, done with a little more <em className="text-primary">care.</em>
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed max-w-xl">
-              Every home on Flex Living is photographed in person, priced transparently, and matched to how you actually live.
+              Every home on Dina Living is photographed in person, priced transparently, and matched to how you actually live.
               No bait-and-switch listings. No endless scrolling through duplicates. Just homes worth visiting.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-6 max-w-md">
@@ -69,7 +69,7 @@ export default function Home() {
               <p className="font-display text-2xl md:text-3xl font-medium text-primary-foreground leading-snug">
                 "The best neighborhoods aren't found. They're felt."
               </p>
-              <p className="mt-3 text-sm text-primary-foreground/75">— The Flex Living curation team</p>
+              <p className="mt-3 text-sm text-primary-foreground/75">— The Dina Living curation team</p>
             </div>
           </div>
         </div>
