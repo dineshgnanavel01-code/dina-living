@@ -3,6 +3,9 @@
  * Footer: hairline-divider editorial footer with brand, links, contact.
  */
 import { Link } from "react-router-dom";
+// NOTE: Only these three icons are imported. Do NOT import Facebook/Twitter/Linkedin
+// directly from lucide-react without checking your installed version — some newer
+// versions removed them and cause "does not provide an export named 'Facebook'" errors.
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const LOGO = "/assets/flexliving-logo.png";
