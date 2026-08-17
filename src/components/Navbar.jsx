@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Heart, Menu, Search, X } from "lucide-react";
 import { useFavorites } from "../contexts/FavoritesContext.jsx";
-import { filterOptions } from "../data/properties.js";
 
 const links = [
   { to: "/", label: "Home" },
@@ -11,48 +10,23 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
-const DEFAULT_FORM = { query: "", type: "All", purpose: "All" };
-
-/**
- * Navbar with an integrated search bar.
- *
- * - Desktop (md+): a search input is always visible in the navbar. Typing a
- *   query (and optionally choosing filters) and pressing Enter or clicking the
- *   magnifier navigates to /properties with the matching query string.
- * - Mobile (< md): a Search icon opens a full-width search panel (a slim
- *   version of the hero/properties SearchPanel) that drops down below the nav.
- */
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [form, setForm] = useState(DEFAULT_FORM);
+  const [mobileSearch, setMobileSearch] = useState(false);
+  const [query, setQuery] = useState("");
   const { favorites } = useFavorites();
   const navigate = useNavigate();
-  const searchRef = useRef(null);
-  const desktopInputRef = useRef(null);
 
-  // Close the mobile search panel when a navigation happens.
-  useEffect(() => {
-    setSearchOpen(false);
-  }, [open]);
-
-  const runSearch = (value, type, purpose) => {
-    const params = new URLSearchParams();
-    if (value && value.trim()) params.set("query", value.trim());
-    if (type !== "All") params.set("type", type);
-    if (purpose !== "All") params.set("purpose", purpose);
-    const qs = params.toString();
-    setSearchOpen(false);
+  const runSearch = (e) => {
+    e?.preventDefault();
+    if (!query.trim()) return;
+    setMobileSearch(false);
     setOpen(false);
-    navigate(`/properties${qs ? `?${qs}` : ""}`);
+    navigate(`/properties?query=${encodeURIComponent(query.trim())}`);
   };
 
   const handleKey = (e) => {
-    if (e.key === "Enter") runSearch(form.query, form.type, form.purpose);
-  };
-
-  const handleDesktopKey = (e) => {
-    if (e.key === "Enter") runSearch(form.query, form.type, form.purpose);
+    if (e.key === "Enter") runSearch(e);
   };
 
   return (
@@ -69,53 +43,50 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* ---------- Desktop search bar ---------- */}
-        <div
-          ref={searchRef}
-          className="hidden flex-1 items-center gap-2 md:flex lg:max-w-md"
+        {/* Desktop search bar + Search button */}
+        <form
+          onSubmit={runSearch}
+          className="hidden w-full max-w-md items-center gap-2 md:flex"
         >
-          <label className="sr-only" htmlFor="navbar-search-input">
-            Search location or property name
+          <label htmlFor="navbar-search" className="sr-only">
+            Search properties
           </label>
-          <div className="relative w-full">
+          <div className="relative flex-1">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />
             <input
-              id="navbar-search-input"
-              ref={desktopInputRef}
+              id="navbar-search"
               type="text"
               placeholder="Search properties…"
-              value={form.query}
-              onChange={(e) => setForm({ ...form, query: e.target.value })}
-              onKeyDown={handleDesktopKey}
-              className="input-field !pl-10"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKey}
+              className="input-field w-full !pl-10"
             />
           </div>
           <button
-            type="button"
-            aria-label="Search"
-            onClick={() => runSearch(form.query, form.type, form.purpose)}
-            className="btn-primary shrink-0"
+            type="submit"
+            className="btn-primary inline-flex shrink-0 items-center gap-2 whitespace-nowrap"
           >
             <Search className="h-4 w-4" />
-            <span className="hidden xl:inline">Search</span>
+            Search
           </button>
-        </div>
+        </form>
 
         <div className="flex items-center gap-2">
-          {/* Mobile search toggle */}
+          {/* Mobile search toggle (magnifier icon) */}
           <button
             type="button"
             aria-label="Toggle search"
-            aria-expanded={searchOpen}
+            aria-expanded={mobileSearch}
             className={`rounded-lg p-2.5 text-ink-light transition-colors hover:bg-brand-100 hover:text-ink md:hidden ${
-              searchOpen ? "bg-brand-100 text-ink" : ""
+              mobileSearch ? "bg-brand-100 text-ink" : ""
             }`}
             onClick={() => {
-              setSearchOpen(!searchOpen);
+              setMobileSearch(!mobileSearch);
               setOpen(false);
             }}
           >
-            {searchOpen ? (
+            {mobileSearch ? (
               <X className="h-5 w-5" />
             ) : (
               <Search className="h-5 w-5" />
@@ -141,7 +112,7 @@ export default function Navbar() {
             className="rounded-lg p-2.5 text-ink-light transition-colors hover:bg-brand-100 md:hidden"
             onClick={() => {
               setOpen(!open);
-              setSearchOpen(false);
+              setMobileSearch(false);
             }}
             aria-label="Toggle menu"
           >
@@ -150,59 +121,37 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* ---------- Mobile search panel ---------- */}
-      {searchOpen && (
+      {/* Mobile search bar (drops down below the nav) */}
+      {mobileSearch && (
         <div className="border-t border-ink/5 bg-brand-50 px-5 pb-4 pt-3 md:hidden">
-          <div className="relative">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />
-            <input
-              type="text"
-              placeholder="Search location or property name…"
-              value={form.query}
-              onChange={(e) => setForm({ ...form, query: e.target.value })}
-              onKeyDown={handleKey}
-              className="input-field !pl-10"
-            />
-          </div>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <select
-              aria-label="Property type"
-              value={form.type}
-              onChange={(e) => setForm({ ...form, type: e.target.value })}
-              className="input-field cursor-pointer"
+          <form onSubmit={runSearch} className="flex items-center gap-2">
+            <label htmlFor="navbar-search-mobile" className="sr-only">
+              Search properties
+            </label>
+            <div className="relative flex-1">
+              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-muted" />
+              <input
+                id="navbar-search-mobile"
+                type="text"
+                placeholder="Search properties…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKey}
+                className="input-field w-full !pl-10"
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn-primary shrink-0"
+              aria-label="Search"
             >
-              <option value="All">All Types</option>
-              {filterOptions.types.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
-            <select
-              aria-label="Purpose"
-              value={form.purpose}
-              onChange={(e) => setForm({ ...form, purpose: e.target.value })}
-              className="input-field cursor-pointer"
-            >
-              <option value="All">Buy & Rent</option>
-              {filterOptions.purposes.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button
-            type="button"
-            onClick={() => runSearch(form.query, form.type, form.purpose)}
-            className="btn-primary mt-3 w-full"
-          >
-            <Search className="h-4 w-4" /> Search
-          </button>
+              <Search className="h-4 w-4" />
+            </button>
+          </form>
         </div>
       )}
 
-      {/* ---------- Mobile menu ---------- */}
+      {/* Mobile menu */}
       {open && (
         <div className="border-t border-ink/5 bg-brand-50 px-5 pb-4 pt-2 md:hidden">
           {links.map((l) => (
