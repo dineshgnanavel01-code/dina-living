@@ -1,0 +1,63 @@
+/*
+ * Flex Living — Sunlit Editorial
+ * Cream paper backgrounds, deep forest green primary, Fraunces display serif
+ * + Plus Jakarta Sans body. Custom theme tokens via Tailwind @layer directives.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #e6e0d4;
+  }
+  body {
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    background-color: #faf7f1;
+    color: #2a2824;
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  a {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+  }
+}
+
+/* Gentle entrance for hero content */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
+
+/* Card image zoom on hover */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.04);
+}
