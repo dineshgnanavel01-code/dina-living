@@ -12,7 +12,6 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [mobileSearch, setMobileSearch] = useState(false);
   const [query, setQuery] = useState("");
   const { favorites } = useFavorites();
   const navigate = useNavigate();
@@ -20,7 +19,6 @@ export default function Navbar() {
   const runSearch = (e) => {
     e?.preventDefault();
     if (!query.trim()) return;
-    setMobileSearch(false);
     setOpen(false);
     navigate(`/properties?query=${encodeURIComponent(query.trim())}`);
   };
@@ -93,26 +91,6 @@ export default function Navbar() {
         </form>
 
         <div className="flex items-center gap-2">
-          {/* Mobile search toggle (magnifier icon) */}
-          <button
-            type="button"
-            aria-label="Toggle search"
-            aria-expanded={mobileSearch}
-            className={`rounded-lg p-2.5 text-ink-light transition-colors hover:bg-brand-100 hover:text-ink md:hidden ${
-              mobileSearch ? "bg-brand-100 text-ink" : ""
-            }`}
-            onClick={() => {
-              setMobileSearch(!mobileSearch);
-              setOpen(false);
-            }}
-          >
-            {mobileSearch ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Search className="h-5 w-5" />
-            )}
-          </button>
-
           <Link
             to="/favorites"
             aria-label="Favorites"
@@ -130,10 +108,7 @@ export default function Navbar() {
           </Link>
           <button
             className="rounded-lg p-2.5 text-ink-light transition-colors hover:bg-brand-100 md:hidden"
-            onClick={() => {
-              setOpen(!open);
-              setMobileSearch(false);
-            }}
+            onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -141,8 +116,8 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile search bar (drops down below the nav) */}
-      {mobileSearch && (
+      {/* Mobile menu (hamburger) with search bar inside */}
+      {open && (
         <div className="border-t border-ink/5 bg-brand-50 px-5 pb-4 pt-3 md:hidden">
           <form onSubmit={runSearch} className="flex items-center gap-2">
             <label htmlFor="navbar-search-mobile" className="sr-only">
@@ -168,12 +143,7 @@ export default function Navbar() {
               <Search className="h-4 w-4" />
             </button>
           </form>
-        </div>
-      )}
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="border-t border-ink/5 bg-brand-50 px-5 pb-4 pt-2 md:hidden">
+          <div className="my-3 border-t border-ink/5" />
           {links.map((l) => (
             <NavLink
               key={l.to}
