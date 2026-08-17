@@ -43,6 +43,26 @@ export default function Navbar() {
           </span>
         </Link>
 
+        {/* Desktop nav links */}
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                `rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-brand-100 text-brand-800"
+                    : "text-ink-light hover:bg-brand-100/60 hover:text-ink"
+                }`
+              }
+            >
+              {l.label}
+            </NavLink>
+          ))}
+        </div>
+
         {/* Desktop search bar + Search button */}
         <form
           onSubmit={runSearch}
